@@ -1,11 +1,12 @@
 import "./globals.css";
 import ThemeProvider from "./providers/ThemeProvider";
 import { ThemeToggleButton } from "../features/theme/ui";
+import { Metadata } from "next";
 
-// export const metadata: Metadata = {
-//   title: "Next Step",
-//   description: "AI-based learning roadmap service",
-// };
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description: "프론트엔드 개발자 배예진의 포트폴리오 웹사이트",
+};
 
 export default function RootLayout({
   children,
