@@ -11,14 +11,6 @@ export const metadata: Metadata = {
     description: "프론트엔드 개발자 배예진의 포트폴리오입니다.",
     url: "https://baeyejin-portfolio.vercel.app",
     siteName: "Portfolio",
-    images: [
-      {
-        url: "/og-image.png", // 또는 '/favicon.png'
-        width: 1200,
-        height: 630,
-        alt: "Portfolio",
-      },
-    ],
     locale: "ko_KR",
     type: "website",
   },
