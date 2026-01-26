@@ -15,6 +15,10 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     type: "website",
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
