@@ -164,22 +164,23 @@ const PublisherProject = ({ className }: Props) => {
     <section
       id="portfolio"
       ref={sectionRef}
-      className={`py-20 px-6 max-w-7xl mx-auto ${className}`}
+      className={`py-12 md:py-20 px-4 md:px-6 max-w-7xl mx-auto ${className}`}
     >
+      {/* 제목 - 반응형 텍스트 크기 */}
       <h1
-        className={`text-5xl md:text-6xl font-bold text-center mb-4 ${isIntersecting ? "animate-slide-up-1" : ""}`}
+        className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-3 md:mb-4 ${isIntersecting ? "animate-slide-up-1" : ""}`}
       >
         Publisher Projects
       </h1>
       <p
-        className={`text-center text-[var(--foreground-light)] mb-16 ${isIntersecting ? "animate-slide-up-2" : ""}`}
+        className={`text-sm md:text-base text-center text-[var(--foreground-light)] mb-10 md:mb-16 ${isIntersecting ? "animate-slide-up-2" : ""}`}
       >
         퍼블리셔 프로젝트
       </p>
 
-      {/* 프로젝트 그리드 */}
+      {/* 프로젝트 그리드 - 반응형 그리드 */}
       <div
-        className={`grid grid-cols-1 md:grid-cols-3 gap-10 ${isIntersecting ? "animate-slide-up-3" : ""}`}
+        className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 ${isIntersecting ? "animate-slide-up-3" : ""}`}
       >
         {projects.map((project) => (
           <div
@@ -187,22 +188,24 @@ const PublisherProject = ({ className }: Props) => {
             className="relative group cursor-pointer hover:scale-105 transition-transform shadow-lg rounded-2xl overflow-hidden"
             onClick={() => setSelectedProject(project)}
           >
-            <div className="bg-white dark:bg-[#2a2a2a] border border-gray-200 dark:border-gray-700 ">
-              <div className=" flex items-center justify-center h-60">
+            <div className="bg-white dark:bg-[#2a2a2a] border border-gray-200 dark:border-gray-700">
+              {/* 이미지 컨테이너 - 반응형 높이 */}
+              <div className="flex items-center justify-center sm:h-52 h-60">
                 <Image
-                  width={150}
-                  height={150}
+                  width={400}
+                  height={400}
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover"
                 />
               </div>
 
-              <div className="p-4 text-center">
-                <p className="font-semibold text-gray-900 dark:text-gray-100 mb-1">
+              {/* 텍스트 영역 - 반응형 패딩 */}
+              <div className="p-3 sm:p-4 text-center">
+                <p className="font-semibold text-sm sm:text-base text-gray-900 dark:text-gray-100 mb-1">
                   {project.title}
                 </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                   {project.description}
                 </p>
                 <p className="text-xs text-[var(--color-accent)] mt-2">
@@ -211,10 +214,11 @@ const PublisherProject = ({ className }: Props) => {
               </div>
             </div>
 
-            <div className="absolute inset-0 bg-[rgba(69,69,69,0.4)] opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl flex items-center justify-center">
+            {/* 호버 오버레이 */}
+            <div className="absolute inset-0 bg-[rgba(69,69,69,0.4)] opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl flex items-center justify-center p-4">
               <Button
                 variant="accent"
-                className="px-8 py-2 bg-white text-[var(--color-accent)] rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2"
+                className="px-4 sm:px-6 md:px-8 py-2 bg-white text-[var(--color-accent)] rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2 text-xs sm:text-sm md:text-base"
               >
                 자세히 보러가기
                 <Mimo />
