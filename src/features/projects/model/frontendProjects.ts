@@ -99,12 +99,12 @@ export const frontendProjects: FrontendProjectWithDetails[] = [
     // 상세 정보 (배열/객체 구조)
     techStackList: [
       {
-        name: "Next.js",
+        name: "Nextjs",
         reason:
           "SSR과 CSR을 효과적으로 활용하여 SEO 최적화와 빠른 초기 로딩 속도를 구현하기 위해 선택했습니다. App Router를 통해 API 라우팅과 페이지 관리를 통합하여 개발 효율성을 높였습니다.",
       },
       {
-        name: "Tailwind CSS",
+        name: "TailwindCSS",
         reason:
           "빠른 프로토타이핑과 일관된 디자인 시스템 구축이 가능하며, 유틸리티 클래스 기반으로 자유로운 커스터마이징이 가능하여 선택했습니다.",
       },

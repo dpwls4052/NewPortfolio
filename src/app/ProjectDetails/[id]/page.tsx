@@ -53,6 +53,15 @@ function SectionTitle({
     </div>
   );
 }
+const techIconMap: Record<string, string> = {
+  Nextjs: "/assets/icons/nextjs.svg",
+  JavaScript: "/assets/icons/javascript.svg",
+  TailwindCSS: "/assets/icons/tailwindcss.svg",
+  Supabase: "/assets/icons/supabase.svg",
+  Firebase: "/assets/icons/firebase.svg",
+  GitHub: "/assets/icons/github.svg",
+  Figma: "/assets/icons/figma.svg",
+};
 
 export default function ProjectDetailPage() {
   const params = useParams();
@@ -258,39 +267,34 @@ export default function ProjectDetailPage() {
         ) : null}
 
         {project.techStackList?.length ? (
-          <section id="tech" className="mt-30">
-            <div>
-              <SectionTitle
-                icon={<Wrench className="h-5 w-5 text-[var(--color-accent)]" />}
-                title="기술 스택"
-              />
+          <section id="tech" className="mt-24">
+            <SectionTitle
+              icon={<Wrench className="h-5 w-5 text-[var(--color-accent)]" />}
+              title="기술 스택"
+            />
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {project.techStackList.map((tech, idx) => (
-                  <div
-                    key={`${tech.name}-${idx}`}
-                    className={cn(
-                      "rounded-lg border border-[var(--border)] bg-white/70 dark:bg-gray-900/40 p-6 shadow-sm",
-                      "hover:border-[var(--color-accent)] hover:shadow transition",
-                    )}
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="h-10 w-10 rounded-2xl bg-[var(--color-accent)]/15 border border-[var(--color-accent)]/30 flex items-center justify-center font-bold text-[var(--color-accent)]">
-                        {tech.name.charAt(0)}
-                      </div>
-                      <div className="min-w-0">
-                        <h3 className="font-bold text-lg truncate">
-                          {tech.name}
-                        </h3>
-                      </div>
-                    </div>
-
-                    <p className="mt-4 text-sm sm:text-base leading-relaxed text-[var(--foreground-light)]">
-                      {tech.reason}
-                    </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+              {project.techStackList.map((tech) => (
+                <div
+                  key={tech.name}
+                  className="group rounded-lg border border-[var(--border)] bg-white/70 dark:bg-gray-900/40 p-4 text-center shadow-sm hover:border-[var(--color-accent)] hover:shadow transition"
+                >
+                  <div className="flex justify-center mb-3">
+                    <Image
+                      src={techIconMap[tech.name]}
+                      alt={tech.name}
+                      width={30}
+                      height={30}
+                      className="opacity-90 group-hover:opacity-100  dark:invert"
+                    />
                   </div>
-                ))}
-              </div>
+
+                  <h3 className="text-sm font-semibold">{tech.name}</h3>
+                  <p className="mt-5 text-[15px] text-[var(--foreground-light)] line-clamp-2">
+                    {tech.reason}
+                  </p>
+                </div>
+              ))}
             </div>
           </section>
         ) : null}
