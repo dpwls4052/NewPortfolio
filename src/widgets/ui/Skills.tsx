@@ -34,11 +34,12 @@ const Skills = () => {
           기술 스택과 숙련도
         </p>
 
-        <div className="space-y-12">
+        <div
+          className={`${isIntersecting ? "animate-slide-up-3" : ""} space-y-12`}
+        >
           {skills.map((skillGroup, index) => (
             <div
               key={skillGroup.category}
-              className={`${isIntersecting ? "animate-slide-up-3" : ""}`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <h2 className="text-2xl font-bold mb-6 text-[var(--color-accent)]">

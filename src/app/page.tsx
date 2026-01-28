@@ -1,5 +1,6 @@
 // src/app/page.tsx
 "use client";
+import { useEffect } from "react";
 import Aurora from "../components/Aurora";
 import { useThemeStore } from "../features/theme/model";
 import Nav from "../widgets/header/ui/Navigation";
@@ -18,14 +19,16 @@ const Page = () => {
       {/* Home Section - Aurora 배경 위에 컨텐츠 */}
       <div className="relative min-h-screen">
         {/* 배경 */}
-        <div className="absolute inset-0">
-          <Aurora
-            colorStops={["#7751ee", "#a78bfa", "#5227ff"]}
-            amplitude={theme === "dark" ? 1.3 : 1.0}
-            blend={0.8}
-            opacity={theme === "dark" ? 1.0 : 0.25}
-          />
-        </div>
+        {theme === "dark" && (
+          <div className="absolute inset-0">
+            <Aurora
+              colorStops={["#7751ee", "#a78bfa", "#5227ff"]}
+              amplitude={1.3}
+              blend={0.8}
+              opacity={1.0}
+            />
+          </div>
+        )}
         {/* 컨텐츠 */}
         <Home />
       </div>

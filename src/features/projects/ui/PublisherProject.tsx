@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Mimo } from "@/src/shared/ui/icon";
 import Button from "@/src/shared/ui/Button";
 import Modal from "@/src/features/modal/Modal";
-import { Project } from "./model/type";
+import { Project } from "../model/type";
 
 type Props = {
   className?: string;

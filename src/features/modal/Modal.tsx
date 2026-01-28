@@ -1,8 +1,8 @@
 import { Site } from "@/src/shared/ui/icon";
-import { Project } from "@/src/widgets/ui/ProjectDetails/model/type";
 import { X } from "lucide-react";
 import Image from "next/image";
 import { useEffect } from "react";
+import { Project } from "../projects/model/type";
 
 const Modal = ({
   project,

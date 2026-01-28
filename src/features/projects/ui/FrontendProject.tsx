@@ -4,9 +4,11 @@ import Button from "@/src/shared/ui/Button";
 import { Mimo } from "@/src/shared/ui/icon";
 import Image from "next/image";
 import { useRef } from "react";
+import { useRouter } from "next/navigation";
 
 const FrontendProject = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const router = useRouter();
   const isIntersecting = useIntersectionObserver(sectionRef, {
     threshold: 0.1,
   });
@@ -36,6 +38,9 @@ const FrontendProject = () => {
     },
   ];
 
+  const handleProjectClick = (projectId: number) => {
+    router.push(`/ProjectDetails/${projectId}`);
+  };
   return (
     <section
       id="feprojects"
@@ -59,15 +64,15 @@ const FrontendProject = () => {
         {feprojects.map((project) => (
           <div
             key={project.id}
-            className=" border border-[var(--border)] shadow-lg rounded-2xl overflow-hidden hover:scale-105 transition-transform relative group"
+            className="border border-[var(--border)] shadow-lg rounded-2xl overflow-hidden hover:scale-105 transition-transform relative group"
           >
             {/* 전체 오버레이 - hover 시 나타남 */}
-            <div className="absolute inset-0 bg-[rgba(69,69,69,0.4)] opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center rounded-2xl">
+            <div
+              onClick={() => handleProjectClick(project.id)}
+              className="absolute inset-0 bg-[rgba(69,69,69,0.4)] opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center rounded-2xl cursor-pointer"
+            >
               <Button
                 variant="accent"
-                onClick={() => {
-                  window.open(project.demo, "_blank");
-                }}
                 className="px-8 py-2 bg-white text-[var(--color-accent)] rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2"
               >
                 자세히 보러가기 <Mimo />

@@ -1,6 +1,3 @@
-import Button from "@/src/shared/ui/Button";
-import { Mimo, Site } from "@/src/shared/ui/icon";
-
 const Home = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);

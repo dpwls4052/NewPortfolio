@@ -1,7 +1,6 @@
-import FrontendProject from "./ProjectDetails/FrontendProject";
-import PublisherProject from "./ProjectDetails/PublisherProject";
+import FrontendProject from "@/src/features/projects/ui/FrontendProject";
+import PublisherProject from "@/src/features/projects/ui/PublisherProject";
 
-// Projects.tsx
 const Projects = () => {
   return (
     <section id="projects" className="py-20 px-6 max-w-7xl mx-auto ">
