@@ -21,7 +21,7 @@ const FrontendProject = () => {
       detail:
         "사용자가 도서를 검색하고 구매할 수 있는 온라인 서점 플랫폼입니다",
       tags: ["React", "JavaScript", "Supabase"],
-      image: "/assets/mokup/Readme_mokup1.png",
+      image: "/assets/mokup/Readme_back.png",
     },
     {
       id: 2,
@@ -30,7 +30,7 @@ const FrontendProject = () => {
       detail:
         "IT 직군 간 학습 로드맵을 작성하고 공유할 수 있는 협업 플랫폼입니다. ",
       tags: ["React", "Next.js", "TypeScript", "Supabase"],
-      image: "/images/nextstep-mockup.png",
+      image: "/assets/mokup/Nextstep_back.png",
     },
   ];
 
@@ -76,13 +76,13 @@ const FrontendProject = () => {
             </div>
 
             {/* 목업 이미지 */}
-            <div className="bg-[#2a2a2a] dark:bg-[#2a2a2a] p-8 flex items-center justify-center h-[250px]">
+            <div className="bg-[#2a2a2a] dark:bg-[#2a2a2a] h-[250px] overflow-hidden">
               <Image
-                width={150}
-                height={150}
+                width={500}
+                height={500}
                 src={project.image}
                 alt={project.title}
-                className="w-full h-auto object-contain"
+                className="w-full h-full object-cover"
               />
             </div>
 
