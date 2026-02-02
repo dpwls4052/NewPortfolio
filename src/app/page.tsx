@@ -13,7 +13,7 @@ const Page = () => {
   const theme = useThemeStore((s) => s.theme);
 
   return (
-    <div className="bg-[var(--background)] text-[var(--foreground)] transition-colors">
+    <div className="bg-[var(--background)] text-[var(--foreground)] transition-colors ">
       <Nav />
 
       {/* Home Section - Aurora 배경 위에 컨텐츠 */}

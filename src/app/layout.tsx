@@ -26,7 +26,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ko" suppressHydrationWarning className="custom-scroll">
+    <html
+      lang="ko"
+      suppressHydrationWarning
+      className="custom-scroll overflow-x-hidden"
+    >
       <head>
         <script
           dangerouslySetInnerHTML={{
