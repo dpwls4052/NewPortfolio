@@ -74,33 +74,35 @@ const Skills = () => {
         </div>
 
         <div
-          className={`mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 ${isIntersecting ? "animate-slide-up-4" : ""}`}
+          className={`mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 ${
+            isIntersecting ? "animate-slide-up-4" : ""
+          }`}
         >
-          <div className="bg-[var(--color-primary)] border border-[var(--border)] rounded-2xl p-6 text-center hover:scale-105 transition-transform">
-            <div className="text-4xl font-bold text-[var(--color-accent)] mb-2">
-              4+
-            </div>
-            <div className="text-[var(--foreground-light)]">
-              Years of Experience
-            </div>
+          <div className="bg-[var(--color-primary)] border border-[var(--border)] rounded-2xl p-6 hover:scale-105 transition-transform text-center">
+            <h3 className="text-lg font-bold text-[var(--color-accent)] mb-2">
+              컴포넌트 설계
+            </h3>
+            <p className="text-sm text-[var(--foreground-light)]">
+              재사용성과 확장성을 고려한 UI 구조 설계
+            </p>
           </div>
 
-          <div className="bg-[var(--color-primary)] border border-[var(--border)] rounded-2xl p-6 text-center hover:scale-105 transition-transform">
-            <div className="text-4xl font-bold text-[var(--color-accent)] mb-2">
-              20+
-            </div>
-            <div className="text-[var(--foreground-light)]">
-              Projects Completed
-            </div>
+          <div className="bg-[var(--color-primary)] border border-[var(--border)] rounded-2xl p-6 hover:scale-105 transition-transform text-center">
+            <h3 className="text-lg font-bold text-[var(--color-accent)] mb-2">
+              데이터 흐름
+            </h3>
+            <p className="text-sm text-[var(--foreground-light)]">
+              서버·클라이언트 상태 분리 및 관리
+            </p>
           </div>
 
-          <div className="bg-[var(--color-primary)] border border-[var(--border)] rounded-2xl p-6 text-center hover:scale-105 transition-transform">
-            <div className="text-4xl font-bold text-[var(--color-accent)] mb-2">
-              10+
-            </div>
-            <div className="text-[var(--foreground-light)]">
-              Technologies Mastered
-            </div>
+          <div className="bg-[var(--color-primary)] border border-[var(--border)] rounded-2xl p-6 hover:scale-105 transition-transform text-center">
+            <h3 className="text-lg font-bold text-[var(--color-accent)] mb-2">
+              UX 디테일
+            </h3>
+            <p className="text-sm text-[var(--foreground-light)]">
+              로딩·에러·빈 상태까지 고려한 UX
+            </p>
           </div>
         </div>
       </div>
