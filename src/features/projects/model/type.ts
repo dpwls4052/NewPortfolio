@@ -13,7 +13,6 @@ export type Project = {
   summary: string;
   type: "site" | "kiosk" | "dashboard" | "cloud";
   photos?: string[];
-  video?: string;
   kioskPhotos?: { images: string[]; bgColor?: string }[];
   newsLink?: string;
 };

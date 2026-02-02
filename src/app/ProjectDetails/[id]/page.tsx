@@ -19,6 +19,7 @@ import {
 
 import Button from "@/src/shared/ui/Button";
 import { frontendProjects } from "@/src/features/projects/model/frontendProjects";
+import ImageSlider from "@/src/features/slide/ui/ImageSlider";
 
 function cn(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
@@ -56,9 +57,12 @@ function SectionTitle({
 const techIconMap: Record<string, string> = {
   Nextjs: "/assets/icons/nextjs.svg",
   JavaScript: "/assets/icons/javascript.svg",
+  TypeScript: "/assets/icons/typescript.svg",
   TailwindCSS: "/assets/icons/tailwindcss.svg",
   Supabase: "/assets/icons/supabase.svg",
   Firebase: "/assets/icons/firebase.svg",
+  ReactQuery: "/assets/icons/reactquery.svg",
+  Axios: "/assets/icons/axios.svg",
   GitHub: "/assets/icons/github.svg",
   Figma: "/assets/icons/figma.svg",
 };
@@ -198,19 +202,26 @@ export default function ProjectDetailPage() {
             </div>
           </div>
 
+          {/* 이미지 슬라이더 */}
           <div className="lg:col-span-5">
-            <div className="relative overflow-hidden rounded-3xl border border-[var(--border)] bg-white/50 dark:bg-gray-900/30 shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/10 via-transparent to-blue-500/10" />
-              <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover "
-                  priority
-                />
+            {project.screenshots && project.screenshots.length > 0 ? (
+              <ImageSlider
+                images={project.screenshots}
+                alt={project.title}
+                autoPlayInterval={3000}
+                showArrows={true}
+                showIndicators={true}
+              />
+            ) : (
+              <div className="relative overflow-hidden rounded-3xl border border-[var(--border)] bg-white/50 dark:bg-gray-900/30 shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/10 via-transparent to-blue-500/10" />
+                <div className="relative aspect-[4/3] w-full flex items-center justify-center">
+                  <span className="text-[var(--foreground-light)]">
+                    이미지 없음
+                  </span>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
@@ -272,27 +283,46 @@ export default function ProjectDetailPage() {
               icon={<Wrench className="h-5 w-5 text-[var(--color-accent)]" />}
               title="기술 스택"
             />
-
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {project.techStackList.map((tech) => (
-                <div
-                  key={tech.name}
-                  className="group rounded-lg border border-[var(--border)] bg-white/70 dark:bg-gray-900/40 p-4 text-center shadow-sm hover:border-[var(--color-accent)] hover:shadow transition"
-                >
-                  <div className="flex justify-center mb-3">
-                    <Image
-                      src={techIconMap[tech.name]}
-                      alt={tech.name}
-                      width={30}
-                      height={30}
-                      className="opacity-90 group-hover:opacity-100  dark:invert"
-                    />
-                  </div>
+                <div key={tech.name} className="relative overflow-visible">
+                  <div
+                    className="
+          group relative
+          rounded-lg border border-[var(--border)]
+          bg-white/70 dark:bg-gray-900/40
+          p-4 text-center shadow-sm
+          transition-all duration-200
+          hover:border-[var(--color-accent)]
+          hover:shadow-xl
+          hover:scale-[1.06]
+          hover:z-20
+          origin-center
+        "
+                  >
+                    <div className="flex justify-center mb-3">
+                      <Image
+                        src={techIconMap[tech.name]}
+                        alt={tech.name}
+                        width={30}
+                        height={30}
+                        className="opacity-90 group-hover:opacity-100 dark:invert transition"
+                      />
+                    </div>
 
-                  <h3 className="text-sm font-semibold">{tech.name}</h3>
-                  <p className="mt-5 text-[15px] text-[var(--foreground-light)] line-clamp-2">
-                    {tech.reason}
-                  </p>
+                    <h3 className="text-sm font-semibold">{tech.name}</h3>
+
+                    <p
+                      className="
+            mt-5 text-[15px] text-[var(--foreground-light)] leading-relaxed
+            max-h-[44px] overflow-hidden
+            group-hover:max-h-[240px]
+            transition-all duration-200 
+          "
+                    >
+                      {tech.reason}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>

@@ -21,9 +21,7 @@ const FrontendProject = () => {
       detail:
         "사용자가 도서를 검색하고 구매할 수 있는 온라인 서점 플랫폼입니다",
       tags: ["React", "JavaScript", "Supabase"],
-      image: "/images/readme-mockup.png",
-      github: "https://github.com/yourusername/readme",
-      demo: "https://readme-demo.vercel.app",
+      image: "/assets/mokup/Readme_mokup1.png",
     },
     {
       id: 2,
@@ -33,8 +31,6 @@ const FrontendProject = () => {
         "IT 직군 간 학습 로드맵을 작성하고 공유할 수 있는 협업 플랫폼입니다. ",
       tags: ["React", "Next.js", "TypeScript", "Supabase"],
       image: "/images/nextstep-mockup.png",
-      github: "https://github.com/yourusername/nextstep",
-      demo: "https://nextstep-demo.vercel.app",
     },
   ];
 
