@@ -15,12 +15,6 @@ const Contact = () => {
       ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center px-5 py-24"
     >
-      {/* 배경 블러 (기존 섹션들과 톤 맞춤) */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute top-1/3 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-[var(--color-accent)]/15 blur-3xl" />
-        <div className="absolute bottom-0 right-[-120px] h-[360px] w-[360px] rounded-full bg-blue-500/10 blur-3xl" />
-      </div>
-
       <div className="w-full max-w-3xl">
         {/* 타이틀 */}
         <div className="text-center mb-12">
